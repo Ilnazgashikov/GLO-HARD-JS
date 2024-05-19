@@ -1,19 +1,18 @@
 "use strict";
 
-const dff = (arg) => {
-    let res = 'Ожидается появление строки...';
-    if (typeof arg === "string") {
-        const maxLength = 30;
-        const str = arg.trim();
-        if (str.length > maxLength) {
-            res = str.substr(0, maxLength) + '...';
-        } else {
-            res = str;
-        }
-    }
-    return res;
-};
+const arr = ['325', '26', '755', '104', '47', '789', '377'];
 
-console.log(dff(5));
-console.log(dff('    Строка менее 30 символов     '));
-console.log(dff('    Строка более 30 символов -  очень длинная строчка'));
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i].startsWith('2') || arr[i].startsWith('4')) {
+    console.log(arr[i]);
+  }
+}
+
+nextNum:
+for (let i = 2; i <= 100; i++) { 
+
+  for (let j = 2; j < i; j++) { 
+    if (i % j == 0) continue nextNum; 
+  }
+  console.log("Делители этого числа 1 и " + i);
+}
